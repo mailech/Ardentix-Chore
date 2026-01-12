@@ -1,0 +1,31 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import AuthContext from './context/AuthContext';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+
+const PrivateRoute = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
+  if (loading) return <div>Loading...</div>;
+  return user ? children : <Navigate to="/login" />;
+};
+
+const PublicRoute = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
+  if (loading) return <div>Loading...</div>;
+  return !user ? children : <Navigate to="/dashboard" />;
+};
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+      <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+      <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+      <Route path="/" element={<Navigate to="/dashboard" />} />
+    </Routes>
+  );
+}
+
+export default App;
