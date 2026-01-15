@@ -77,8 +77,6 @@ Start the React app:
 npm run dev
 ```
 
-Visit `http://localhost:5173` in your browser, and you are good to go!
-
 ---
 
 ## 💭 Final Thoughts
