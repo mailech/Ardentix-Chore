@@ -11,7 +11,7 @@ My goal was to create a system where users can securely log in and manage their 
 
 ## Live Demo & Repo
 - **GitHub**: [https://github.com/mailech/Ardentix-Chore](https://github.com/mailech/Ardentix-Chore)
-- **Live Demo**: *[Link will be added after deployment]*
+- **Live Demo**: https://ardentix-chore-6kk8.vercel.app/
 
 ## ✨ Key Features
 
