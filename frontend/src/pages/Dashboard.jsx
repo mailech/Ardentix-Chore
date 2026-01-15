@@ -197,7 +197,19 @@ const Dashboard = () => {
                                 />
                             ))
                         ) : (
-                            <div className="col-span-full text-center py-20 text-gray-500 dark:text-gray-400">No tasks found matching your search.</div>
+                            <div className="col-span-full flex flex-col items-center justify-center py-20 text-center animate-fade-in-down">
+                                <div className="bg-white dark:bg-slate-800/50 p-6 rounded-full mb-4 shadow-sm">
+                                    <svg className="w-16 h-16 text-indigo-200 dark:text-indigo-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">You're all caught up!</h3>
+                                <p className="text-gray-500 dark:text-gray-400 max-w-md mx-auto mb-6">Create a new task to get started or enjoy your free time.</p>
+                                <button
+                                    onClick={() => { setCurrentTask(null); setShowForm(true); }}
+                                    className="btn-primary"
+                                >
+                                    Create First Task
+                                </button>
+                            </div>
                         )}
                     </div>
                 )}
