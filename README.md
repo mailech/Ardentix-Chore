@@ -54,7 +54,7 @@ npm install
 
 Create a `.env` file in the `backend` folder with the following:
 ```env
-MONGO_URI=mongodb://localhost:27017/taskmanager
+MONGO_URI= your Mongo URL( ATLAS/ COMPASS) 
 JWT_SECRET=your_super_secret_key
 # GOOGLE_CLIENT_ID=your_google_client_id (Optional)
 PORT=5000
