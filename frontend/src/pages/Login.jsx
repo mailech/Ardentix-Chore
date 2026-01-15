@@ -19,7 +19,8 @@ const Login = () => {
             login(res.data.token, res.data.user);
             navigate('/dashboard');
         } catch (err) {
-            setError(err.response?.data?.message || 'Login failed');
+            console.error("Login failed:", err);
+            setError(err.response?.data?.message || err.message || 'Login failed. Please check your network connection.');
         }
     };
 

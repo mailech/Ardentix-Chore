@@ -19,7 +19,8 @@ const Register = () => {
             login(res.data.token, res.data.user);
             navigate('/dashboard');
         } catch (err) {
-            setError(err.response?.data?.message || 'Registration failed');
+            console.error("Registration failed:", err);
+            setError(err.response?.data?.message || err.message || 'Registration failed. Please check your network connection.');
         }
     };
 
